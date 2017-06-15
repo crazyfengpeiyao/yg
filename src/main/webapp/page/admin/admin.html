@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>阳光义工登录</title>
+
+ <#include "/module/common_css.html">
+ <#include "/module/common_js.html">
+</head>
+<body>
+<#include "/module/nav.html">
+
+<div class="container" id="loginCtrl">
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2">
+			<div  class="form-horizontal" role="form">
+			<div ms-if="showAlert" class="alert alert-warning alert-dismissible fade in" role="alert">
+			      <strong>请输入正确的用户名和密码</strong>
+			      </div>
+				  <div class="form-group">
+				    <label  class="col-sm-2 control-label">邮箱</label>
+				    <div class="col-sm-10">
+				      <input type="email"   class="form-control" placeholder="请输入您的邮箱">
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label  class="col-sm-2 control-label">密码</label>
+				    <div class="col-sm-10">
+				      <input type="password"   class="form-control" placeholder="请输入您的密码">
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <div class="col-sm-offset-2 col-sm-10">
+				      <button   class="btn btn-primary">登 录</button>
+				    </div>
+				  </div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript" src="/static/admin/admin.js"></script>
+</body>
+</html>

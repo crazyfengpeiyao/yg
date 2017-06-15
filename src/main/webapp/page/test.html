@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<script type="text/javascript" src="/static/libs/vue.js"></script>
+<style type="text/css" src="/static/libs/bootstrap.css"></style>
+<script type="text/javascript" src="/static/libs/jquery.js"></script>
+</head>
+<body >
+
+<div id="app">
+	<table>
+	<tr>
+		<th>id</th>
+		<th>名字</th>
+	</tr>
+	<tr v-for="user in datas">
+		<td>{{user.userId}}</td>
+		<td>{{user.userName}}</td>
+	</tr>
+</table>
+{{de}}
+</div>
+</body>
+
+<script type="text/javascript">
+	var vm = new Vue({
+		el : '#app',
+		data : {
+			datas : [],
+			de : {
+				d : 1
+			}
+		}
+	});
+	init();
+	
+	
+	function init(){
+
+		$.ajax({
+			url : '/yg/test',
+			method :'get',
+			dataType : 'json',
+			data : {
+				pageNo : 0
+			},
+			success : function(data){
+				vm.datas  = data.data;
+				vm.de.d = 2;
+			},
+			error : function(data){
+				
+			}
+		});
+	}
+	
+	
+
+</script>
+</html>
